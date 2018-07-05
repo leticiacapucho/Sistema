@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{item?.nome}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!-- 
+    O que tem dentro do placeholder fica como linha d'agua na aplicação...
+  e quando é digitado algo, aquela linha d'agua some.
+
+    Esse type="number", serve para subir e descer valor, deixando ele no 
+  negativo ou positivo.
+
+================================================================================================================================================
+
+    Dentro dessa tag do ion-input, aqui: [(ngModel)]="item.name" 
+  é pego cada parte do item, primeiro, nome, depois quantidade...
+  
+-->
+<ion-item>
+  <ion-label>Nome: </ion-label> 
+  <ion-input [(ngModel)]="item.nome"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Descrição: </ion-label>
+  <ion-input [(ngModel)]="item.descricao"></ion-input>
+</ion-item>
+ 
+<ion-item>
+    <ion-label>Preço: </ion-label>
+    <ion-input [(ngModel)]="item.preco"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Percentual: </ion-label>
+    <ion-input [(ngModel)]="item.percentual"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Saldo: </ion-label>
+    <ion-input [(ngModel)]="item.saldo"></ion-input>
+  </ion-item>
+
+   <button ion-button block clear (click)="saveItem(item)">Salvar</button> 
+
+  <button ion-button block clear color="danger" (click)="removeItem(item)">Deletar</button>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary"> <!-- Esse color="primary" define a cor da barra superior-->
+    <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      Sistema Mobile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header> <!-- mostra a quantidade de items -->
+      Últimos Produtos
+    </ion-list-header>
+  <ion-item *ngFor="let item of sistemaList$ | async" detail-push navPush="EditProdutoPage" [navParams]="{item: item}">
+    
+    {{item.nome}} <!-- Aqui é porque salvamos, aí exibe os dados cadastrados -->
+    </ion-item>
+    
+  </ion-list>
+</ion-content>
